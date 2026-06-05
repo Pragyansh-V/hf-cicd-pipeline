@@ -1,0 +1,23 @@
+artifact_path: /Users/pragyansh/GitHub Projects/mlflow-experiment-tracking/mlruns/1/models/m-b583dba051684c1ab6990c63779e5b0b/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.14.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.9.0
+    skops_trusted_types: null
+mlflow_version: 3.13.0
+model_id: m-b583dba051684c1ab6990c63779e5b0b
+model_size_bytes: 30725
+model_uuid: m-b583dba051684c1ab6990c63779e5b0b
+prompts: null
+run_id: 398c48f71243485abbf75b02fc7fc8dc
+utc_time_created: '2026-06-04 21:09:56.956214'
