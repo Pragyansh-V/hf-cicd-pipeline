@@ -35,10 +35,11 @@ class BreastCancerPredictor:
         self._load_model()
 
     def _load_model(self):
-        """Loads the production model from MLflow Registry."""
-        print(f"Loading model from: {self.model_uri}")
-        mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
-        self.model = mlflow.sklearn.load_model(self.model_uri)
+        """Loads model from local exported file — no MLflow registry needed."""
+        import joblib
+        model_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "exported_model", "model.pkl")
+        print(f"Loading model from: {model_path}")
+        self.model = joblib.load(model_path)
         print(f"Model loaded: {type(self.model.named_steps['classifier']).__name__}")
 
     def predict(self, request: PredictionRequest) -> PredictionResponse:
